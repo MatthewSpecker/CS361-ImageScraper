@@ -17,4 +17,4 @@ def scrape_image(keyword):
     return "Error, action unsuccessful", 404
 
 if __name__ == '__main__':
-  #app.run(host='0.0.0.0', port=6754)
+  app.run(host='0.0.0.0', port=8037)
