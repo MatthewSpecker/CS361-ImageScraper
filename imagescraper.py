@@ -12,9 +12,11 @@ def scrape_image(keyword):
   if res.status_code == 200:
     soup = BeautifulSoup(res.content)
     image = soup.select('table.infobox a.image img[src]')
-    return jsonify({'imageLink':image[0]['src']}), 200
+    response = jsonify({'imageLink':image[0]['src']})
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response, 200
   else:
     return "Error, action unsuccessful", 404
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=31594)
+  app.run(host='0.0.0.0', port=31598)
