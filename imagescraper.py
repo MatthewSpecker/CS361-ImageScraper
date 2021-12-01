@@ -5,6 +5,9 @@ from flask import jsonify
 
 app = Flask(__name__)
 
+#Take in a name of a wikipedia page from user by receiving a GET
+#Go to the Wikipedia page, scrape the image found at the top right
+#Return image to user as a string
 @app.route('/<string:keyword>/')
 def scrape_image(keyword):
   url = 'https://en.wikipedia.org/wiki/' + keyword
